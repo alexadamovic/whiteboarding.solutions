@@ -9,7 +9,22 @@ Input: "Jasmine Ann Jones"
 Output: "Jasmine%20Ann%20Jones"
 
 *QUESTIONS*
-- Can I assume the input will be a string?
+- Can I assume the input will always be a string?
+- Can I use the replace() method and regular expressions to solve this problem?
+- Can I split the string into an array?
+- Should I use recursion to test for a base case?
+
+function stringToURL(string) {
+  let output = ""
+  for (let i = 0; i < string.length; i++) {
+    if (string.charAt(i) === " ") {
+      output += "%20";
+    } else {
+      output += string.charAt(i);
+    }
+  }
+  return output;
+}
 
 stringToURL = function(string) {
   if (typeof string !== "string") {
@@ -33,6 +48,8 @@ stringToURL = function(string) {
   output = sArray.join("%20");
   return stringToURL(output);
 }
+
+// With replace
 
 
 Question #2: Array Deduping
@@ -62,12 +79,13 @@ function doubleRemover(array) {
   return output;
 }
 
-//With recursion:
+// With recursion:
 
 function doubleRemover(array) {
-  let output = [];
+  let recursionTest = [...array];
+  recursionTest.sort();
   for (let i = 0; i < array.length; i++) {
-    if (array.sort[i] !== array.sort[i + 1]) {
+    if (recursionTest[i] !== recursionTest[i + 1]) {
       return array;
     }
     let removeDoubleSet = new Set(array);
@@ -146,3 +164,12 @@ Example
 Input: [9, 2, 7, 12]
 
 Output: [2, 7, 9, 12]
+
+function quickSort(array) {
+  function swap(items, leftIndex, rightIndex){
+    let temp = items[leftIndex];
+    items[leftIndex] = items[rightIndex];
+    items[rightIndex] = temp;
+}
+}
+
