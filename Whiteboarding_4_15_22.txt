@@ -8,7 +8,13 @@ Input: "Jasmine Ann Jones"
 
 Output: "Jasmine%20Ann%20Jones"
 
+*QUESTIONS*
+- Can I assume the input will be a string?
+
 stringToURL = function(string) {
+  if (typeof string !== "string") {
+    return "input is not a string";
+  }
   sArray = string.split(" ");
   output = sArray.join("%20");
   return output;
@@ -16,4 +22,14 @@ stringToURL = function(string) {
 
 // With recursion:
 
-stringToURL = function
+stringToURL = function(string) {
+  if (typeof string !== "string") {
+    return "input is not a string";
+  }
+  if (string.includes(" ") === false) {
+    return string;
+  }
+  sArray = string.split(" ");
+  output = sArray.join("%20");
+  return stringToURL(output);
+}
