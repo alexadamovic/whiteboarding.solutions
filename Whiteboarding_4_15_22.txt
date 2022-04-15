@@ -61,3 +61,46 @@ function doubleRemover(array) {
   let output = array.filter(onlyUnique);
   return output;
 }
+
+//With recursion:
+
+function doubleRemover(array) {
+  let output = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array.sort[i] !== array.sort[i + 1]) {
+      return array;
+    }
+    let removeDoubleSet = new Set(array);
+    let output = Array.from(removeDoubleSet)
+  }
+  return doubleRemover(output);
+}
+
+
+
+Question #3: Compressing Strings
+Write an algorithm that takes a string with repeated characters and compresses them, using a number to show how many times the repeated character has been compressed. For instance, aaa would be written as 3a. Solve the problem with and without recursion.
+
+Example
+Input: "aaabccdddda"
+
+Output: "3ab2c4da"
+
+*QUESTIONS
+- Can I assume the input with always be a string??
+
+function compString(string) {
+  output = "";
+  charCounter = 1
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === string[i + 1]) {
+      charCounter ++;
+    } else if (charCounter === 1) {
+      output += string[i];
+    } else {
+      output += charCounter + string[i];
+      charCounter = 1;
+    }
+  }
+  return output;
+}
