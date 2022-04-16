@@ -9,7 +9,7 @@ Input: "Jasmine Ann Jones"
 Output: "Jasmine%20Ann%20Jones"
 
 *QUESTIONS*
-- Can I assume the input will always be a string?
+- Can I assume the input will always be a string? n
 - Can I use the replace() method and regular expressions to solve this problem?
 - Can I split the string into an array?
 - Should I use recursion to test for a base case?

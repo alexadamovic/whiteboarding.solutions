@@ -1,0 +1,42 @@
+WHITEBOARDING PROBLEM:
+
+Question #1: Turning Strings to URLs
+URLs cannot have spaces. Instead, all spaces in a string are replaced with %20. Write an algorithm that replaces all spaces in a string with %20.
+
+You may not use the replace() method or regular expressions to solve this problem. Solve the problem with and without recursion.
+
+Example
+Input: "Jasmine Ann Jones"
+
+Output: "Jasmine%20Ann%20Jones"
+
+//input = anything, but we can only run the algorithm if its a string
+//output = string
+
+//using string.split(" ")
+//using array.join("%20")
+
+stringToURL = function(str) {
+	if (typeof str !== "string") {
+		return "input is not a string";
+	}
+	return string.split(" ").join("%20");
+}
+
+stringToURL = function(str) {
+	if (typeof str !== "string") {
+		return "input is not a string";
+	}
+	if (string.includes(" ") === false) {
+		return str;
+	}
+	sArray = string.split(" ");
+	output = sArray.join("%20"); 
+	return stringToURL(output);
+}
+
+for (let i = 0; i < str.length; i++) {
+	if (str[i] === " " && str[i + 1] !== " ") {
+		output += "%20"
+	} 
+}
